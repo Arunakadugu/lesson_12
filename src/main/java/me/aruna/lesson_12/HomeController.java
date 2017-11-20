@@ -25,6 +25,12 @@ public class HomeController {
 
     @RequestMapping("/")
     public String listActors(Model model){
+        model.addAttribute("actors",actorRepository.findAll());
+        return "list";
+       // return "form";
+    }
+    @GetMapping("/add")
+    public String newActors(Model model){
         model.addAttribute("actor",new Actor());
         return "form";
     }

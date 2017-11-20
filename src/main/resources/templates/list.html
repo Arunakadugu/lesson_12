@@ -6,6 +6,7 @@
 </head>
 <body>
 <a href="/add">Add an actor</a>
+<div th:each="actor : ${actors}">
 <div th:if="${actor.headshot} != null">
     <img th:src="${actor.headshot}" />
     <hr />
